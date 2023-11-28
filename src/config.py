@@ -15,13 +15,13 @@ class BaseConfig:
     THREADS_NUMBER = 20
 
     OUTPUT_FOLDER = "results"
-    OUTPUT_FILE = f"{OUTPUT_FOLDER}/Results_{date_string}_{time_string}.md"
+    OUTPUT_FILE = f"{OUTPUT_FOLDER}/Results_{date_string}_{time_string}.txt"
 
     LOG_FOLDER = "logs"
     LOG_FILE = f"{LOG_FOLDER}/main.log"
     LOG_FILE_SIZE = 3
 
-    REQUEST_TIMEOUT = 25
+    REQUEST_TIMEOUT = 300
     HEADERS = {
         "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36"
     }

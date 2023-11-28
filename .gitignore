@@ -164,3 +164,5 @@ cython_debug/
 domains.txt
 logs
 results
+
+credentials.json

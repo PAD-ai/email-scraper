@@ -31,7 +31,7 @@ class DomainExplorer(Thread):
     def run(self):
         while True:
             try:
-                self.domain = self.work.get()
+                self.title, self.domain = self.work.get()
                 self.main()
             except Exception as e:
                 logger.error(str(e))
@@ -53,7 +53,7 @@ class DomainExplorer(Thread):
 
         found_emails = self.get_emails()
 
-        self.results.put((self.domain, found_emails))
+        self.results.put((self.title, found_emails))
 
     def get_page_source(self):
         """A method to get the source code from a link"""

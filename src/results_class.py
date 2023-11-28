@@ -13,10 +13,10 @@ class EmailOutput(Thread):
 
     def run(self):
         while True:
-            domain, emaillist = self.work.get()
-            email = "\n* ".join(emaillist)
+            title, emaillist = self.work.get()
 
             with open(BaseConfig.OUTPUT_FILE, "a", encoding="utf-8") as results_file:
-                results_file.write(f"\n# {domain}\n* {email}\n")
+                for email in emaillist:
+                    results_file.write(f"{title}->{email}\n")
 
             self.work.task_done()

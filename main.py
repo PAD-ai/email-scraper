@@ -32,7 +32,7 @@ if __name__ == "__main__":
     # Add domains to the queue from a context manager to save memory
     with open(BaseConfig.HOSTS_FILE, "r", encoding="utf-8") as domains_file:
         for domain in domains_file.readlines():
-            domainqueue.put(domain.strip())
+            domainqueue.put(domain.replace("\n", "").strip().split("->"))
 
     # Gracefully join our queues so that our threads can exit
     domainqueue.join()
